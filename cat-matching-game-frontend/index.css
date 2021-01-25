@@ -1,0 +1,12 @@
+.catcard{
+    width: 1080px;
+    margin: auto;
+}
+
+.cards{
+    float: left;
+    margin: 10px;
+    height: 200px;
+    width: 200px; 
+    background: rgb(170, 245, 226) 
+}
