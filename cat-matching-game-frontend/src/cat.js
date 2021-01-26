@@ -12,5 +12,5 @@ class Cat{
       image1.src = imgUrl
      newCat.append(image1)
     }
-
+   
 }

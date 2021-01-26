@@ -25,4 +25,3 @@ images.forEach(image=>new Cat(image))
 
 
 
-
