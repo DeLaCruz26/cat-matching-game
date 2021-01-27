@@ -1,6 +1,7 @@
 .catcard{
     width: 1080px;
     margin: auto;
+    
 }
 
 .cards{
@@ -8,13 +9,33 @@
     margin: 10px;
     height: 200px;
     width: 200px; 
-    background: rgb(170, 245, 226);
+    position: relative;
     
+}
+.backSide{
+    backface-visibility: hidden;
+    height: 200px;
+    width: 200px; 
+    background-color: rgb(55, 214, 148);
+    transform: rotateY(0deg);
+    transition: transform 1s;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 img{
+    backface-visibility: hidden;
     float: left;
     height: 200px;
     width: 200px; 
-   
+    transform: rotateY(180deg);
+    transition: transform 1s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body {
+    background-color: rgb(247, 212, 167);
 }
