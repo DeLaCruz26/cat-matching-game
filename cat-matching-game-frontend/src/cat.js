@@ -26,7 +26,9 @@
             if (Cat.selectedCat === null){
                 Cat.selectedCat = this 
                     
-                }   else if (Cat.selectedCat.imgUrl !== imgUrl){
+            }   
+                
+                else if (Cat.selectedCat.imgUrl !== imgUrl){
                     window.setTimeout( () => {
                         this.backSide.style.transform = "rotateY(0deg)"
                     this.image1.style.transform = "rotateY(180deg)"
@@ -37,7 +39,8 @@
                     },1000)
                     
                     
-                    } else if (Cat.selectedCat.imgUrl === imgUrl){
+            } 
+                else if (Cat.selectedCat.imgUrl === imgUrl){
                     window.setTimeout( () =>{
                         this.image1.src = imgUrl
                         Cat.selectedCat.newCat.remove();
@@ -46,8 +49,10 @@
                         Cat.numberOfCatsSelected = 0 
                     },1000)
                     
-                }
-            });
+            }
+            
+        });
+            
 
         }
     static selectedCat = null 
@@ -67,7 +72,7 @@
     // make the pictures rin random order  everytime the loop restarts 
     // show both image1 when clicked 
     //  create a start and end of the game?
-    // create a new placeholder 
+    // create a new placeholder when clicked and removed replace with a invisible card 
     
 
     // problems I've encountered:

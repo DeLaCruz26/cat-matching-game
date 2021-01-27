@@ -36,8 +36,11 @@ img{
     top: 0;
     left: 0;
 }
+body{
+    background-color: orange;
+}
 
-body {
+div {
     background-color: rgb(38, 197, 64);
 }
 
@@ -45,4 +48,5 @@ h1{
     font-size-adjust: initial;
     font-family: 'Gloria Hallelujah', cursive;
     text-align: center;
+    border-style: dotted;
 }
