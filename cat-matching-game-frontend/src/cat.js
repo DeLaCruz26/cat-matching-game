@@ -15,38 +15,63 @@
             this.image1.src = imgUrl
             this.newCat.append(this.image1)
             this.newCat.append(this.backSide)
-            
+
         this.newCat.addEventListener("click",() =>{
-            if (Cat.cardLoop === null){
-                    this.image1.style.transform = "rotateY(0deg)"
-                    this.backSide.style.transform = "rotateY(180deg)"
-                    Cat.cardLoop = this 
-            
-            } else if (Cat.cardLoop.imgUrl !== imgUrl ){
-                  this.backSide.style.transform = "rotateY(0deg)"
-                  this.image1.style.transform = "rotateY(180deg)"
-                   Cat.cardLoop.backSide.style.transform = "rotateY(0deg)"
-                   Cat.cardLoop.image1.style.transform = "rotateY(180deg)"
-                   Cat.cardloop = null
-                  
-        
-            } else if (Cat.cardLoop.imgUrl === imgUrl){
-                    this.image1.src = imgUrl
-                    Cat.cardLoop.newCat.remove();
-                    this.newCat.remove();
-                    Cat.cardLoop = null
+            if (Cat.numberOfCatsSelected >= 2){
+                return 
+            }
+            Cat.numberOfCatsSelected++ 
+            this.image1.style.transform = "rotateY(0deg)"
+            this.backSide.style.transform = "rotateY(180deg)"
+            if (Cat.selectedCat === null){
+                Cat.selectedCat = this 
+                    
+                }   else if (Cat.selectedCat.imgUrl !== imgUrl){
+                    window.setTimeout( () => {
+                        this.backSide.style.transform = "rotateY(0deg)"
+                    this.image1.style.transform = "rotateY(180deg)"
+                    Cat.selectedCat.backSide.style.transform = "rotateY(0deg)"
+                    Cat.selectedCat.image1.style.transform = "rotateY(180deg)"
+                    Cat.selectedCat = null
+                    Cat.numberOfCatsSelected = 0 
+                    },1000)
+                    
+                    
+                    } else if (Cat.selectedCat.imgUrl === imgUrl){
+                    window.setTimeout( () =>{
+                        this.image1.src = imgUrl
+                        Cat.selectedCat.newCat.remove();
+                        this.newCat.remove();
+                        Cat.selectedCat = null
+                        Cat.numberOfCatsSelected = 0 
+                    },1000)
+                    
                 }
             });
 
         }
-    static cardLoop = null 
+    static selectedCat = null 
+    static numberOfCatsSelected = 0
 }
+
+
+
     // CARD LOOP:
     // step 1.  If I flip the card shows a cat then you have another chance to click a second card
     // step 2.  If the cards match delete cards if not give another chance to find card 
     // step 3.  Then it goes back to step 1. 
     // step 4.  When they are no game cards left ALL cards show up back again.
     
+
+    // things to do:
+    // make the pictures rin random order  everytime the loop restarts 
+    // show both image1 when clicked 
     //  create a start and end of the game?
-    // create a backside of the card 
+    // create a new placeholder 
+    
+
+    // problems I've encountered:
+    // 1. when I double click the same picture it dissapears which makes sense because is the same pic but it shouldn't happen
+    // 2.when I click other pictures without finding their pair it won't let me see any other pictures
+
 
