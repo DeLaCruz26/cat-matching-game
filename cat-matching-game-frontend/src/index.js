@@ -24,7 +24,7 @@ const images = ["https://i.pinimg.com/564x/f7/12/14/f7121435875f8439e16fe30658b3
 newImagArray = [...images, ...images]
 newImagArray.forEach(newPic=> new Cat(newPic))
 
-
+setInterval(function(){Cat.timer++},100)
 
 
 

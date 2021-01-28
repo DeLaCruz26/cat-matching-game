@@ -22,26 +22,22 @@ class Cat{
 
 
          this.newCat.addEventListener("click",() =>{
-            if (Cat.numberOfCatsSelected >= 2){
-                return 
-            }
-            Cat.numberOfCatsSelected++ 
             this.image1.style.transform = "rotateY(0deg)"
             this.backSide.style.transform = "rotateY(180deg)"
             if (Cat.selectedCat === null){
                 Cat.selectedCat = this 
+                Cat.numberOfCatsSelected++ 
                     
             }   
                 
             else if (Cat.selectedCat.imgUrl !== imgUrl){
-                    
                 window.setTimeout( () => {
                         this.backSide.style.transform = "rotateY(0deg)"
                         this.image1.style.transform = "rotateY(180deg)"
                         Cat.selectedCat.backSide.style.transform = "rotateY(0deg)"
                         Cat.selectedCat.image1.style.transform = "rotateY(180deg)"
                         Cat.selectedCat = null
-                        Cat.numberOfCatsSelected = 0 
+                        Cat.numberOfCatsSelected--
                 },1000)
                     
                     
@@ -52,7 +48,13 @@ class Cat{
                         Cat.selectedCat.newCat.style.visibility = "hidden"
                         this.newCat.style.visibility = "hidden"
                         Cat.selectedCat = null
-                        Cat.numberOfCatsSelected = 0 
+                        Cat.numberOfCatsSelected++
+                        if (Cat.numberOfCatsSelected === 12){
+                            let finalScore = new Score(Cat.timer)
+                            document.getElementById("user-initials").style.visibility = "visible"
+                            alert(` YOUR SCORE ${Cat.timer}!`)
+
+                        }
                     },1000)
                 
                     
@@ -65,6 +67,7 @@ class Cat{
         }
     static selectedCat = null 
     static numberOfCatsSelected = 0
+    static timer = 0
 
  
 }
