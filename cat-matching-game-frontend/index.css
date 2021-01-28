@@ -10,8 +10,17 @@
     height: 200px;
     width: 200px; 
     position: relative;
-    border-style: outset;
+    border-style: inset;
    
+}
+.cardHolder{
+    float: left;
+    margin: 10px;
+    height: 200px;
+    width: 200px; 
+    position: static;
+   top: 0;
+   left: 0;
 }
 .backSide{
     backface-visibility: hidden;
@@ -38,10 +47,12 @@ img{
 }
 body{
     background-color: orange;
+
+    
 }
 
 div {
-    background-color: rgb(38, 197, 64);
+    background-color: rgb(148, 241, 105);
 }
 
 h1{

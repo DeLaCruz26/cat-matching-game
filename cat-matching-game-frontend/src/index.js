@@ -31,3 +31,5 @@ newImagArray.forEach(newPic=> new Cat(newPic))
 
 
 
+
+
