@@ -27,7 +27,7 @@ class Cat{
             if (Cat.selectedCat === null){
                 Cat.selectedCat = this 
                 Cat.numberOfCatsSelected++ 
-                    
+                
             }   
                 
             else if (Cat.selectedCat.imgUrl !== imgUrl){
@@ -52,7 +52,7 @@ class Cat{
                         if (Cat.numberOfCatsSelected === 12){
                             let finalScore = new Score(Cat.timer)
                             document.getElementById("user-initials").style.visibility = "visible"
-                            alert(` YOUR SCORE ${Cat.timer}!`)
+                            alert(` YOUR SCORE is ${Cat.timer}!`)
 
                         }
                     },1000)

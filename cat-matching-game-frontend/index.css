@@ -1,7 +1,7 @@
 .catcard{
     width: 1080px;
     margin: auto;
-    
+   
 }
 
 .cards{
@@ -10,7 +10,7 @@
     height: 200px;
     width: 200px; 
     position: relative;
-    border-style: inset;
+   
    
 }
 .cardHolder{
@@ -47,7 +47,8 @@ img{
 }
 body{
     background-color: orange;
-
+    margin: 30px;
+    padding: 5px;
 }
 
 div {
@@ -62,5 +63,5 @@ h1{
 }
 #user-initials{
     visibility: hidden;
-    
 }
+

@@ -26,6 +26,9 @@ newImagArray.forEach(newPic=> new Cat(newPic))
 
 setInterval(function(){Cat.timer++},100)
 
+function sortImages(){
+    newImagArray.sort();
+}
 
 
 
