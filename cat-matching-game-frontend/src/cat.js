@@ -1,6 +1,4 @@
- // need to create one card with an image and that image will have a pair 
-    // it has to be a random order 
-class Cat{
+ class Cat{
 
     constructor(imgUrl){
             this.imgUrl = imgUrl;
