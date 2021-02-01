@@ -20,6 +20,7 @@ class Cat{
             this.newCat.appendChild(this.cardHolder)
 
          this.newCat.addEventListener("click",() =>{
+            
             this.image1.style.transform = "rotateY(0deg)"
             this.backSide.style.transform = "rotateY(180deg)"
             
@@ -82,7 +83,7 @@ class Cat{
 
     // TO DO:
     // shuffle images array when the game restarts
-    //  create a start and end of the game?
+
     
 
   
