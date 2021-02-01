@@ -20,7 +20,7 @@ class Cat{
             this.newCat.appendChild(this.cardHolder)
 
          this.newCat.addEventListener("click",() =>{
-            
+        
             this.image1.style.transform = "rotateY(0deg)"
             this.backSide.style.transform = "rotateY(180deg)"
             
