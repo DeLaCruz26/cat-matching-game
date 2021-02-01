@@ -20,15 +20,27 @@ const images = ["https://i.pinimg.com/564x/f7/12/14/f7121435875f8439e16fe30658b3
 "https://i.pinimg.com/474x/e5/c5/fb/e5c5fb3415123fbab7c5941c49cf7fc8.jpg"]
 
 // images.forEach(image=>new Cat(image))
+// randomCard = images =>{
+// let newImagArray = [...images, ...images]
+// let shuffledArray = []
+// while (newImagArray.length){
+//     const randomCatIndex = Math.floor(Math.random()*newImagArray.length)
+//     shuffledArray.push(newImagArray[randomCatIndex])
+//     newImagArray.splice(randomCatIndex,1)
+// }
+//     return shuffledArray
+// }
+
+
+
+
 
 newImagArray = [...images, ...images]
 newImagArray.forEach(newPic=> new Cat(newPic))
 
 setInterval(function(){Cat.timer++},100)
 
-function sortImages(){
-    newImagArray.sort();
-}
+
 
 
 
