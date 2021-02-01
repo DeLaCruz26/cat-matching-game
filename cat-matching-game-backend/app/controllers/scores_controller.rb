@@ -1,25 +1,30 @@
 class ScoresController < ApplicationController
     
     def index 
-        @scores = Score.all 
-        render json: @scores 
+        scores = Score.all 
+        render json: scores 
     end 
 
     def create 
-        @score = Score.new(score_params)
-        if @score.save 
-            render json: @score 
+        user = User.find_or_create_by(user_params)
+       score = user.scores.build(scores_params)
+       if user.valid? && score.save
+      render json: score
         else 
-            render json: {error: "Ooops!"}
+            render json: {error: "Ooops! It didn't work, try again!"}
         end
     end 
 
 
 
 private 
-def score_params
+def scores_params
     params.require(:score).permit(:user_score,:user_initials)
 end 
+def user_params
+    params.require(:user).permit(:username)
+end 
+
 end
 
 # "user_score" "user_initials"
