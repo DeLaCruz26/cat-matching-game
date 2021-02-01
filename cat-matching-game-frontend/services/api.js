@@ -9,7 +9,8 @@
 //     }
 //     parseJSON = response => response.json()
 //      headers = {"Accepts": "application/json", "Content-Type": "application/json"}
-//     fetchCatGame =()=> {
+    
+// fetchCatGame =()=> {
 //         return fetch(this.catMatchingGameURL).then(parseJSON)
 //     }
 
