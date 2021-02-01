@@ -12,15 +12,15 @@
             
 
         document.querySelector(".catCards").appendChild(this.newCat)
-            this.image1 = document.createElement("img");
-            this.image1.src = imgUrl
-            this.newCat.append(this.image1)
+            this.image = document.createElement("img");
+            this.image.src = imgUrl
+            this.newCat.append(this.image)
             this.newCat.append(this.backSide)
             this.newCat.appendChild(this.cardHolder)
 
 
          this.newCat.addEventListener("click",() =>{
-            this.image1.style.transform = "rotateY(0deg)"
+            this.image.style.transform = "rotateY(0deg)"
             this.backSide.style.transform = "rotateY(180deg)"
             if (Cat.selectedCat === null){
                 Cat.selectedCat = this 
@@ -31,18 +31,18 @@
             else if (Cat.selectedCat.imgUrl !== imgUrl){
                 window.setTimeout( () => {
                         this.backSide.style.transform = "rotateY(0deg)"
-                        this.image1.style.transform = "rotateY(180deg)"
+                        this.image.style.transform = "rotateY(180deg)"
                         Cat.selectedCat.backSide.style.transform = "rotateY(0deg)"
-                        Cat.selectedCat.image1.style.transform = "rotateY(180deg)"
+                        Cat.selectedCat.image.style.transform = "rotateY(180deg)"
                         Cat.selectedCat = null
                         Cat.numberOfCatsSelected--
                 },1000)
                     
                     
             } 
-                else if (Cat.selectedCat.imgUrl === imgUrl){
+            else if (Cat.selectedCat.imgUrl === imgUrl){
                     window.setTimeout( () =>{
-                        this.image1.src = imgUrl
+                        this.image.src = imgUrl
                         Cat.selectedCat.newCat.style.visibility = "hidden"
                         this.newCat.style.visibility = "hidden"
                         Cat.selectedCat = null
