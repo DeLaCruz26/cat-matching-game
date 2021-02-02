@@ -9,6 +9,21 @@ class UsersController < ApplicationController
         user = User.find_by_id(params[:id])
         render json: user
     end 
+
+    def create
+        user = User.create(user_params)
+        if user.save
+          render json: user
+        else
+          render json: { error: "Couldn't create that user", status: 400 }
+        end
+    end
+
+    def destroy
+        user = User.find_by_id(params[:id])
+        user.destroy
+        render json: user
+    end
 end
 
 

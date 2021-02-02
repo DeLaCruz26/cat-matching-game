@@ -20,26 +20,12 @@ while (newImagArray.length){
  newImagArray = [...images, ...images]
  newImagArray = randomCard(newImagArray)
 newImagArray.forEach(newPic=> new Cat(newPic))
-
-
 setInterval(function(){Cat.timer++},100)
 
 
-// function startWatching(seconds, minutes) {
-// 	timer_observer = setInterval(() => {
-// 		seconds > 58 ? ((minutes += 1), (seconds = 0)) : (seconds += 1);
-// 		seconds_str = seconds > 9 ? `${seconds}` : `0${seconds}`;
-// 		minutes_str = minutes > 9 ? `${minutes}` : `0${minutes}`;
-// 		time.innerHTML = `${minutes_str}:${seconds_str}`;
-// 		if (correct_flips >= 9) {
-// 			audio.play();
-// 			clearInterval(timer_observer);
-// 			gameWonParty(moves);
-// 			return;
-// 		}
-// 		// console.log(minutes, seconds_str);
-// 	}, 1000);
-// }
+
+
+
 
 
 

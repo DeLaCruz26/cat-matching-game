@@ -5,23 +5,42 @@ class API{
          this.url = `http://localhost:${port}`
     }
 
-    get catMatchingGameURL(){
-        return this.url + '/score'
-    }
+
+    // helpers 
     parseJSON = response => response.json()
     
-    headers = {"Accepts": "application/json", "Content-Type": "application/json"}
-    
-fetchCatGame = () => {
-        return fetch(this.catMatchingGameURL).then(parseJSON)
+    headers = {"Accepts":"application/json", "Content-Type": "application/json"}
+
+
+    // getters 
+    get scoresURL(){
+        return this.url + '/scores'
+    }
+    get userURL(){
+        return this.url + '/users'
     }
 
-    fetchCatGame = (id) => {
-        return fetch(this.catMatchingGameURL +`/${id}`).then(parseJSON)
-    }
+    // fetch
+    fecthScores = () => fetch(this.scoresURL).then(this.parseJSON)
+    fetchScore = (scoreID) => fetch(this.scoresURL + `/${scoreID}`).then(this.parseJSON)
+
+    fetchUsers = () => fetch(this.usersURL).then(this.parseJSON)
+    fetchUser = (userID) => fetch(this.usersURL + `/${userID}`).then(this.parseJSON)
+
+
+
+   // posts 
 
     postScore = () => {
-        return fetch(this.catMatchingGameURL, {
+        return fetch(this.scoresURL, {
+            method: "POST",
+            header: this.headers,
+            body: JSON.stringify()
+        }).then(parseJSON)
+    }
+
+    postUser = () => {
+        return fetch(this.usersURL, {
             method: "POST",
             header: this.headers,
             body: JSON.stringify()
