@@ -1,6 +1,7 @@
 
 class API{
     constructor(port=3000){
+         this.port = port
          this.url = `http://localhost:${port}`
     }
 
