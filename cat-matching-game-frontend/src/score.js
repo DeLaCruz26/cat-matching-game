@@ -11,6 +11,7 @@ class Score{
         this.userInitials = userInitials;
     }
 
+    
 
 
 }
