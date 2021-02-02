@@ -22,7 +22,7 @@ class API{
 
     // fetch
     fetchScores = () => fetch(this.scoresURL).then(this.parseJSON)
-    fetchScores = (scoreID) => fetch(this.scoresURL + `/${scoreID}`).then(this.parseJSON)
+    fetchScore = (scoreID) => fetch(this.scoresURL + `/${scoreID}`).then(this.parseJSON)
 
     fetchUsers = () => fetch(this.usersURL).then(this.parseJSON)
     fetchUser = (userID) => fetch(this.usersURL + `/${userID}`).then(this.parseJSON)

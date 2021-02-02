@@ -68,4 +68,7 @@ h1{
 
 
 
-
+.displayScores{
+    font-size-adjust: initial;
+    font-family: 'Gloria Hallelujah', cursive;
+}
