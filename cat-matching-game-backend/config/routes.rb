@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :games
-resources :users
-resources :scores
+resources :users, only: [:index, :show, :create, :destroy]
+resources :scores, only: [:index, :show, :create, :destroy]
 end
