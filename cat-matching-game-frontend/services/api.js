@@ -7,7 +7,7 @@ class API{
 
 
     // helpers 
-    parseJSON = response => response.json()
+    parseJSON = res => res.json()
     
     headers = {"Accepts":"application/json", "Content-Type": "application/json"}
 
@@ -16,13 +16,13 @@ class API{
     get scoresURL(){
         return this.url + '/scores'
     }
-    get userURL(){
+    get usersURL(){
         return this.url + '/users'
     }
 
     // fetch
-    fecthScores = () => fetch(this.scoresURL).then(this.parseJSON)
-    fetchScore = (scoreID) => fetch(this.scoresURL + `/${scoreID}`).then(this.parseJSON)
+    fetchScores = () => fetch(this.scoresURL).then(this.parseJSON)
+    fetchScores = (scoreID) => fetch(this.scoresURL + `/${scoreID}`).then(this.parseJSON)
 
     fetchUsers = () => fetch(this.usersURL).then(this.parseJSON)
     fetchUser = (userID) => fetch(this.usersURL + `/${userID}`).then(this.parseJSON)
@@ -31,19 +31,16 @@ class API{
 
    // posts 
 
-    postScore = () => {
-        return fetch(this.scoresURL, {
-            method: "POST",
-            header: this.headers,
-            body: JSON.stringify()
-        }).then(parseJSON)
-    }
+   postUser = body => fetch(this.usersURL, {
+    method: "POST",
+    headers: this.headers,
+    body: JSON.stringify(body)
+  }).then(this.parseJSON)
 
-    postUser = () => {
-        return fetch(this.usersURL, {
-            method: "POST",
-            header: this.headers,
-            body: JSON.stringify()
-        }).then(parseJSON)
-    }
+  postUserScore = body => fetch(this.scoresURL, {
+    method: "POST",
+    headers: this.headers,
+    body: JSON.stringify(body)
+  }).then(this.parseJSON)
+
 }

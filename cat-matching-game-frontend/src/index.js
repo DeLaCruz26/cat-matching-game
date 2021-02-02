@@ -22,7 +22,7 @@ while (newImagArray.length){
 newImagArray.forEach(newPic=> new Cat(newPic))
 setInterval(function(){Cat.timer++},100)
 
-
+const api = API
 
 
 
