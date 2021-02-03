@@ -1,14 +1,10 @@
 class Score{
-    constructor(userInitials){
-        this.userInitials = userInitials;
-        
+   static  displayScores = () =>{
+       const main = document.querySelector(".catCards")
         main.innerHTML = ""
 
-        this.userScore = document.createElement('ol')
-
         
-        // this function displays a list of all users scores 
-    displayScores = users => {
+        api.fetchUsers().then((users)=> {
             users.forEach(user => {
                 const li = document.createElement("li")
                 li.className = "user-list"
@@ -18,16 +14,18 @@ class Score{
                     p.innerHTML = `Username: ${user.username}- Score:${Cat.timer}-User Initials:${score.userInitials}`
                     li.append(p)
                 })
-        
+                main.append(li)
             }) 
-         }
-    
-    
-    
-    
-    
-    
+        })  
     }
+
+    
+        
+      
+
+     
+   
+
 
       
     

@@ -1,6 +1,6 @@
  
 class Cat{
-    
+
     static selectedCat = null 
     static numberOfCatsSelected = 0
     static timer = 0
@@ -78,7 +78,7 @@ class Cat{
                         user:{username:userInitials},
                         score:{user_initials:userInitials,user_score:Cat.timer}
                     })
-
+                    Score.displayScores()
 
                 })
 
@@ -89,15 +89,10 @@ class Cat{
 
 
 
-    // CARD LOOP:
-    // step 1.  If I flip the card shows a cat then you have another chance to click a second card
-    // step 2.  If the cards match delete cards if not give another chance to find card 
-    // step 3.  Then it goes back to step 1. 
-    // step 4.  When they are no game cards left ALL cards show up back again.
-    
+//    TO DO:
+// display all the user's scores from a highest score to low 
 
-    // TO DO:
-    // shuffle images array when the game restarts
+
 
     
 

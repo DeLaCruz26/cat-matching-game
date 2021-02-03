@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_190213) do
 
   create_table "scores", force: :cascade do |t|
     t.integer "user_score"
-    t.integer "user_initials"
+    t.string "user_initials"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
