@@ -18,7 +18,10 @@ class Score{
             }) 
         })  
     }
-
+// issues 
+// 1. when display scores, it display the same score to all of the other users 
+// 2. the user initials is undefined on the screen
+// 3. change the user initials functionality 
     
         
       

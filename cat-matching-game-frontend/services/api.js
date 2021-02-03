@@ -20,7 +20,7 @@ class API{
         return this.url + '/users'
     }
 
-    // fetch
+    // FETCH  
     fetchScores = () => fetch(this.scoresURL).then(this.parseJSON)
     fetchScore = (scoreID) => fetch(this.scoresURL + `/${scoreID}`).then(this.parseJSON)
 
@@ -29,7 +29,7 @@ class API{
 
 
 
-   // posts 
+   // POSTS//
 
    postUser = body => fetch(this.usersURL, {
     method: "POST",
@@ -44,3 +44,8 @@ class API{
   }).then(this.parseJSON)
 
 }
+
+
+
+//  cd cat-matching-game-frontend 
+// cd cat-matching-game-backend

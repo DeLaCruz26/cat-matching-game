@@ -18,7 +18,7 @@ while (newImagArray.length){
 
 
  newImagArray = [...images, ...images]
- newImagArray = randomCard(newImagArray)
+//  newImagArray = randomCard(newImagArray)
 newImagArray.forEach(newPic=> new Cat(newPic))
 setInterval(function(){Cat.timer++},100)
 
