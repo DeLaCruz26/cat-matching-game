@@ -11,7 +11,8 @@ class Score{
                 user.scores.forEach(score =>{
                     const p = document.createElement("p")
                     p.className = "score-list"
-                    p.innerHTML = `Username: ${user.username}- Score:${Cat.timer}-User Initials:${score.userInitials}`
+                    p.innerHTML = `Username: ${user.username}- Score:${score.user_score}-User Initials:${score.user_initials}`
+                    console.log(score)
                     li.append(p)
                 })
                 main.append(li)
