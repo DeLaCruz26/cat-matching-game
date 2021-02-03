@@ -12,17 +12,27 @@ class Score{
                     const p = document.createElement("p")
                     p.className = "score-list"
                     p.innerHTML = `Username: ${user.username}- Score:${score.user_score}-User Initials:${score.user_initials}`
-                    console.log(score)
                     li.append(p)
                 })
                 main.append(li)
+                const resetButton = document.createElement("BUTTON")
+                resetButton.innerText = "reset"
+                li.append(resetButton)
+               
+            resetButton.addEventListener("click",() =>{
+                    this.reset()
+                })
             }) 
-        })  
+           
+        })
+
     }
-// issues 
-// 1. when display scores, it display the same score to all of the other users 
-// 2. the user initials is undefined on the screen
-// 3. change the user initials functionality 
+
+ static reset = () => {
+    const main = document.querySelector(".catCards")
+        main.innerHTML = ""
+        newImagArray.forEach(newPic=> new Cat(newPic)) 
+ }
     
         
       
