@@ -15,15 +15,15 @@ class Score{
                     li.append(p)
                 })
                 main.append(li)
-                const resetButton = document.createElement("BUTTON")
-                resetButton.innerText = "reset"
-                li.append(resetButton)
-               
-            resetButton.addEventListener("click",() =>{
-                    this.reset()
-                })
+            
             }) 
+            const resetButton = document.createElement("BUTTON")
+            resetButton.innerText = "reset"
+            main.append(resetButton)
            
+            resetButton.addEventListener("click",() =>{
+                this.reset()
+            })
         })
 
     }
@@ -33,18 +33,7 @@ class Score{
         main.innerHTML = ""
         newImagArray.forEach(newPic=> new Cat(newPic)) 
  }
-    
-        
-      
-
-     
-   
-
-
-      
-    
-
-
-
-
 }
+
+// PROBLEMS 
+//
