@@ -56,10 +56,10 @@ div {
 }
 
 h1{
-    font-size-adjust: initial;
+    font-size: 50px;
     font-family: 'Gloria Hallelujah', cursive;
     text-align: center;
-    border-style: dotted;
+    
 }
 #user-initials{
     visibility: hidden;

@@ -4,6 +4,7 @@ class Score{
         main.innerHTML = ""
 
         
+
         api.fetchUsers().then((users)=> {
             users.forEach(user => {
                 const li = document.createElement("li")
@@ -11,14 +12,15 @@ class Score{
                 user.scores.forEach(score =>{
                     const p = document.createElement("p")
                     p.className = "score-list"
-                    p.innerHTML = `Username: ${user.username}- Score:${score.user_score}-User Initials:${score.user_initials}`
+                    p.innerText = `Username: ${user.username}- Score:${score.user_score}-User Initials:${score.user_initials}`
                     li.append(p)
                 })
                 main.append(li)
-            
+            // create a div class, p,  append it to the body
+            // css  
             }) 
             const resetButton = document.createElement("BUTTON")
-            resetButton.innerText = "reset"
+            resetButton.innerText = "Reset Game"
             main.append(resetButton)
            
             resetButton.addEventListener("click",() =>{
@@ -33,7 +35,5 @@ class Score{
         main.innerHTML = ""
         newImagArray.forEach(newPic=> new Cat(newPic)) 
  }
-}
 
-// PROBLEMS 
-//
+}

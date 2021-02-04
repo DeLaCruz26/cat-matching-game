@@ -4,6 +4,7 @@ class Cat{
     static selectedCat = null 
     static numberOfCatsSelected = 0
     static timer = 0
+    static chosenCats = 0
 
     constructor(imgUrl){
             this.imgUrl = imgUrl;
@@ -19,21 +20,30 @@ class Cat{
             this.newCat.appendChild(this.cardHolder)
 
          this.newCat.addEventListener("click",() =>{
-        
+            if (Cat.numberOfCatsSelected >= 2){
+                return 
+            }
+
             this.image1.style.transform = "rotateY(0deg)"
             this.backSide.style.transform = "rotateY(180deg)"
             
             if (Cat.selectedCat === null){
                 Cat.selectedCat = this 
-                Cat.numberOfCatsSelected++ 
+                Cat.numberOfCatsSelected++
             }   
                 
             else if (Cat.selectedCat.imgUrl !== imgUrl){
-                this.firstSetTimeOut()
+                Cat.numberOfCatsSelected++
+                const previousSelectedCat = Cat.selectedCat
+                Cat.selectedCat = this 
+                this.firstSetTimeOut(previousSelectedCat)
             } 
                 
             else if (Cat.selectedCat.imgUrl === imgUrl){
-                this.secondSetTimeOut()
+                Cat.numberOfCatsSelected++
+                const previousSelectedCat = Cat.selectedCat
+                Cat.selectedCat = this 
+                this.secondSetTimeOut(previousSelectedCat)
             } 
            
            
@@ -51,24 +61,25 @@ class Cat{
         this.cardHolder.className="cardHolder"
     }
     
-    firstSetTimeOut = () =>{
+    firstSetTimeOut = (previousSelectedCat) =>{
         window.setTimeout( () => {
-            this.backSide.style.transform = "rotateY(0deg)"
-            this.image1.style.transform = "rotateY(180deg)"
+            previousSelectedCat.backSide.style.transform = "rotateY(0deg)"
+            previousSelectedCat.image1.style.transform = "rotateY(180deg)"
             Cat.selectedCat.backSide.style.transform = "rotateY(0deg)"
             Cat.selectedCat.image1.style.transform = "rotateY(180deg)"
             Cat.selectedCat = null
-            Cat.numberOfCatsSelected--
+            Cat.numberOfCatsSelected = 0 
     },1000)
     }
-    secondSetTimeOut = () => {
+    secondSetTimeOut = (previousSelectedCat) => {
         window.setTimeout( () =>{
             this.image1.src = this.imgUrl
             Cat.selectedCat.newCat.style.visibility = "hidden"
-            this.newCat.style.visibility = "hidden"
+            previousSelectedCat.newCat.style.visibility = "hidden"
             Cat.selectedCat = null
-            Cat.numberOfCatsSelected++
-            if (Cat.numberOfCatsSelected === 12){
+            Cat.numberOfCatsSelected = 0 
+            Cat.chosenCats += 2 
+            if (Cat.chosenCats === 12){
                 document.getElementById("user-initials").style.visibility = "visible"
                 alert(` YOUR SCORE is ${Cat.timer}!`)
                 document.addEventListener("submit",(event)=>{
@@ -89,8 +100,7 @@ class Cat{
 
 
 
-//    TO DO:
-// display all the user's scores from a highest score to low 
+
 
 
 
