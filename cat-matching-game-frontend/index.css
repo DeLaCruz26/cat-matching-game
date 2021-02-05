@@ -70,8 +70,22 @@ h1{
     display: inline-block;
     border-radius: 10px;
     background-color: #7b38d8;
+    margin-top: 30px;
   
 }
+input{
+  font-size: 28px;
+    padding: 20px;
+    width: 200px;
+  font-size-adjust: initial;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #7b38d8;
+
+}
+
 
 
 
@@ -82,6 +96,7 @@ h1{
 
 
 button {
+  font-family: 'Gloria Hallelujah', cursive;
     display: inline-block;
     background-color: #7b38d8;
     border-radius: 10px;

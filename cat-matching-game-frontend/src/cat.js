@@ -82,6 +82,8 @@ class Cat{
             if (Cat.chosenCats === 12){
                 document.getElementById("user-initials").style.visibility = "visible"
                 alert(` YOUR SCORE is ${Cat.timer}!`)
+                const main = document.querySelector(".catCards")
+                main.innerHTML = ""
                 document.addEventListener("submit",(event)=>{
                     event.preventDefault()
                  const userInitials = document.getElementById("user-initials").children[0].value

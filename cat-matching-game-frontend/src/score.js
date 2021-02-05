@@ -1,4 +1,18 @@
+// TO DO:
+// FIX SCORE BUTTON EVERYTIME IS CLICKED IT GIVES ME A NEW SCORE WITHOUT PLAYING 
+// WHEN IT DISPLAYS THE SCORE IS NOT THE SAME SCORE DISPLAYED IN THE SCORE'S LIST 
+// FIX THE TIMER SO IT STOPS WHILE NOT PLAYING?
+// FIX CSS FOR SCORES
+// WHEN CLICK NEW GAME IT SHOWS WEIRD LAYOUT ON CSS 
+// FIX ALERT
+
 class Score{
+    // static renderUserScore = () =>{
+    //     api.postUserScore()
+    //     .then(this.displayScores)
+    // }
+    
+
    static  displayScores = () =>{
        const main = document.querySelector(".scoresArea")
         main.innerHTML = ""
@@ -32,11 +46,7 @@ class Score{
             main.innerHTML = ""
             newImagArray.forEach(newPic=> new Cat(newPic)) 
     }
-    static renderScores = () =>{
-        this.scoresArea = document.createElement("div")
-        this.scoresArea.className = "scoresArea"
-      
-    }
+   
 
 }
 // create a div class, p,  append it to the body
