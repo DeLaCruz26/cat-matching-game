@@ -1,9 +1,7 @@
 class Score{
    static  displayScores = () =>{
-       const main = document.querySelector(".catCards")
+       const main = document.querySelector(".scoresArea")
         main.innerHTML = ""
-
-        
 
         api.fetchUsers().then((users)=> {
             users.forEach(user => {
@@ -12,12 +10,11 @@ class Score{
                 user.scores.forEach(score =>{
                     const p = document.createElement("p")
                     p.className = "score-list"
-                    p.innerText = `Username: ${user.username}- Score:${score.user_score}-User Initials:${score.user_initials}`
+                    p.innerText = `Username: ${user.username}- Score:${score.user_score}`
                     li.append(p)
                 })
                 main.append(li)
-            // create a div class, p,  append it to the body
-            // css  
+            
             }) 
             const resetButton = document.createElement("BUTTON")
             resetButton.innerText = "Reset Game"
@@ -30,10 +27,17 @@ class Score{
 
     }
 
- static reset = () => {
-    const main = document.querySelector(".catCards")
-        main.innerHTML = ""
-        newImagArray.forEach(newPic=> new Cat(newPic)) 
- }
+    static reset = () => {
+        const main = document.querySelector(".scoresArea")
+            main.innerHTML = ""
+            newImagArray.forEach(newPic=> new Cat(newPic)) 
+    }
+    // static renderScores = () =>{
+    //     this.scoresArea = document.createElement("div")
+    //     this.scoresArea.className = "scoresArea"
+    //     console.log(score)
+    // }
 
 }
+// create a div class, p,  append it to the body
+ // css  
