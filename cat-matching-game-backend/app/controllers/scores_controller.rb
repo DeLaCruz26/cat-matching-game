@@ -8,12 +8,12 @@ class ScoresController < ApplicationController
     def show
         score = Score.find_by_id(params[:id])
         render json: score
-      end 
+    end 
 
     def create 
         user = User.find_or_create_by(user_params)
        score = user.scores.build(scores_params)
-       if user.save && score.save
+       if user.valid? && score.save
       render json: score
         else 
             render json: {error: "Ooops! It didn't work, try again!"}

@@ -20,7 +20,10 @@ while (newImagArray.length){
  newImagArray = [...images, ...images]
 // newImagArray = randomCard(newImagArray)
 newImagArray.forEach(newPic=> new Cat(newPic))
-setInterval(function(){Cat.timer++},100)
+const scoreInterval = setInterval(function(){Cat.timer++},100)
+
+
+
 
 const api = new API
 

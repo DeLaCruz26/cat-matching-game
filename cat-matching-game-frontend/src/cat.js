@@ -9,7 +9,8 @@ class Cat{
     constructor(imgUrl){
             this.imgUrl = imgUrl;
             this.createElements()
-
+           
+          
             
 
         document.querySelector(".catCards").appendChild(this.newCat)
@@ -82,6 +83,7 @@ class Cat{
             if (Cat.chosenCats === 12){
                 document.getElementById("user-initials").style.visibility = "visible"
                 alert(` YOUR SCORE is ${Cat.timer}!`)
+                clearInterval(scoreInterval)
                 const main = document.querySelector(".catCards")
                 main.innerHTML = ""
                 document.addEventListener("submit",(event)=>{
@@ -90,9 +92,8 @@ class Cat{
                     api.postUserScore({
                         user:{username:userInitials},
                         score:{user_initials:userInitials,user_score:Cat.timer}
-                    })
-                    Score.displayScores()
-
+                    }).then(Score.displayScores)
+                
                 })
 
              }
