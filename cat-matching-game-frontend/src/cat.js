@@ -95,8 +95,8 @@ class Cat{
                     }).then(Score.displayScores)
                 
                 })
-
-             }
+            }
+            
         },1000)
     }
 }
