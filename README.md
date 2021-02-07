@@ -1,6 +1,6 @@
 # CAT MATCHING GAME
 
-This game consists of matching 2 cat cards and disappearing them if matched. There are 12 cards in a random order and you will get a score at the end of the game, the score is measured by a time interval(hidden).
+This game consists of matching 2 cat cards that disappear when matched. There are 12 cards in a random order and you will get a score at the end of the game, the score is measured by a time interval(hidden).
 Once you get the SCORE ALERT a form to submit your name will appear and display all the players scores as well as yours. Then you can start a new game by clicking a button that says “NEW GAME” 
 
 # INSTALLATION:
