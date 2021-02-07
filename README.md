@@ -6,8 +6,8 @@ Once you get the SCORE ALERT a form to submit your name will appear and display 
 # INSTALLATION:
 
 BACKEND 
-1. GIT CLONE git@github.com:sarisgar28/cat-matching-game.git
-2. RAILS NEW cat-matching-game-backend --api
+1. GIT CLONE: git@github.com:sarisgar28/cat-matching-game.git
+2. RAILS NEW:  cat-matching-game-backend --api
 3. CORS INSTALLATION: gem 'rack-cors'
 4. SERIALIZER INSTALLATION: gem 'active_model_serializers'
 
