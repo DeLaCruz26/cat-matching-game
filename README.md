@@ -6,10 +6,10 @@ Once you get the SCORE ALERT a form to submit your name will appear and display 
 # INSTALLATION:
 
 BACKEND 
-GIT CLONE git@github.com:sarisgar28/cat-matching-game.git
-RAILS NEW cat-matching-game-backend --api
-CORS INSTALLATION: gem 'rack-cors'
-SERIALIZER INSTALLATION: gem 'active_model_serializers'
+1. GIT CLONE git@github.com:sarisgar28/cat-matching-game.git
+2. RAILS NEW cat-matching-game-backend --api
+3. CORS INSTALLATION: gem 'rack-cors'
+4. SERIALIZER INSTALLATION: gem 'active_model_serializers'
 
 # CONTRIBUTING:
 Fork and clone the project 
@@ -26,11 +26,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 End license text.
 
 # CONTACT:
-SARA I. GARCIA 
+SARA I. GARCIA -
+
 sarisgar28@gmail.com
 
 # ACKNOWLEDGMENT:
-https://www.rubyguides.com/2019/03/rails-ajax/
-https://medium.com/@luoana.chirita/using-a-ruby-on-rails-backend-with-a-javascript-frontend-ddf25f8f19c6
-https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
- https://guides.rubyonrails.org/api_app.html
+- https://www.rubyguides.com/2019/03/rails-ajax/
+- https://medium.com/@luoana.chirita/using-a-ruby-on-rails-backend-with-a-javascript-frontend-ddf25f8f19c6
+- https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- https://guides.rubyonrails.org/api_app.html
