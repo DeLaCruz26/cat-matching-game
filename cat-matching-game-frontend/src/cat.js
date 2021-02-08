@@ -46,7 +46,7 @@ class Cat{
                 Cat.selectedCat = this 
                 this.secondSetTimeOut(previousSelectedCat)
             } 
-           
+            
            
         });
          
@@ -93,11 +93,10 @@ class Cat{
                         user:{username:userInitials},
                         score:{user_initials:userInitials,user_score:Cat.timer}
                     }).then(Score.displayScores)
-                
                 })
             }
-            
         },1000)
+       
     }
 }
 
