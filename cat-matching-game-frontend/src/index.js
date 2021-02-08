@@ -18,12 +18,13 @@ while (newImagArray.length){
 
 
  newImagArray = [...images, ...images]
-newImagArray = randomCard(newImagArray)
+ newImagArray = randomCard(newImagArray)
 newImagArray.forEach(newPic=> new Cat(newPic))
 
 let scoreInterval 
 function beginInterval() {
    scoreInterval =  setInterval(function(){Cat.timer++},100)
+   newImagArray = randomCard(newImagArray)
 }
 
 beginInterval()
