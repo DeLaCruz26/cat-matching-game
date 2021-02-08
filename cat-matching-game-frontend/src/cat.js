@@ -82,18 +82,12 @@ class Cat{
             Cat.chosenCats += 2 
             if (Cat.chosenCats === 12){
                 document.getElementById("user-initials").style.visibility = "visible"
-                alert(` YOUR SCORE is ${Cat.timer}!`)
+                Score.currentScore = Cat.timer  
+               alert(` YOUR SCORE is ${Score.currentScore}!`)
                 clearInterval(scoreInterval)
+                Cat.chosenCats = 0
                 const main = document.querySelector(".catCards")
                 main.innerHTML = ""
-                document.addEventListener("submit",(event)=>{
-                    event.preventDefault()
-                 const userInitials = document.getElementById("user-initials").children[0].value
-                    api.postUserScore({
-                        user:{username:userInitials},
-                        score:{user_initials:userInitials,user_score:Cat.timer}
-                    }).then(Score.displayScores)
-                })
             }
         },1000)
        

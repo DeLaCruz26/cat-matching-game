@@ -10,6 +10,7 @@
     height: 200px;
     width: 200px; 
     position: relative;
+    background-color: rgb(82, 181, 238);
    
    
 }
@@ -46,15 +47,12 @@ img{
     left: 0;
 }
 body{
-    background-color: orange;
+    background-color: rgb(247, 160, 0);
     margin: 30px;
     padding: 5px;
+ 
 }
 
-div {
-   background-color: rgb(82, 181, 238);
-   
-}
 p {
   font-size: 30px;
   font-family: 'Gloria Hallelujah', cursive;

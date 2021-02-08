@@ -18,18 +18,30 @@ while (newImagArray.length){
 
 
  newImagArray = [...images, ...images]
-// newImagArray = randomCard(newImagArray)
+newImagArray = randomCard(newImagArray)
 newImagArray.forEach(newPic=> new Cat(newPic))
-const scoreInterval = setInterval(function(){Cat.timer++},100)
 
+let scoreInterval 
+function beginInterval() {
+   scoreInterval =  setInterval(function(){Cat.timer++},100)
+}
+
+beginInterval()
 
 
 
 const api = new API
 
+const form = document.querySelector("#user-initials")
 
-
-
+form.addEventListener("submit",(event)=>{
+    event.preventDefault()
+    const userInitials = document.getElementById("user-initials").children[0].value
+    api.postUserScore({
+        user:{username:userInitials},
+        score:{user_initials:userInitials,user_score:Score.currentScore}
+    }).then(Score.displayScores)
+})
 
 
 
