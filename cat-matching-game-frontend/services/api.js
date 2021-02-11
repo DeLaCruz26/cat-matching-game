@@ -27,7 +27,7 @@ class API{
     fetchUsers = () => fetch(this.usersURL).then(this.parseJSON)
     fetchUser = (userID) => fetch(this.usersURL + `/${userID}`).then(this.parseJSON)
 
-
+// make a fetch request 
 
    // POSTS//
 

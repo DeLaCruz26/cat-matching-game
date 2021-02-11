@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-resources :users
-resources :scores
+resources :users, only: [:index, :create, :show]
+resources :scores, only: [:index, :create, :show]
 end

@@ -1,13 +1,20 @@
 
 
 class Score{
+  
+
     static currentScore = 0 
- static  displayScores = () =>{
-     console.log("displayScores")
+   static get main(){
+       return document.querySelector(".scoresArea")
+   }
+    
+
+    static  displayScores = () =>{
+    //  console.log("displayScores")
        const main = document.querySelector(".scoresArea")
         main.innerHTML = ""
         
-        api.fetchUsers().then((users)=> {
+      return api.fetchUsers().then((users)=> {
             users.forEach(user => {
                 // console.log(user)
                 const ol = document.createElement("ol")
@@ -26,20 +33,26 @@ class Score{
                 newGame.addEventListener("click",this.newGameButton)
                 main.append(newGame)
             
-        })
+                    const user = document.createElement("BUTTON")
+                    user.innerText = "My Score"
+                    user.id = "scoreButtonId"
+                    user.addEventListener("click",this.userButton)
+                    main.append(user) 
+            })
 
     }
 
+    
     static newGameButton = () => {
            const main = document.querySelector(".scoresArea")
             main.innerHTML = ""
             newImagArray.forEach(newPic=> new Cat(newPic)) 
             Cat.timer = 0
-           beginInterval()
+        beginInterval()
           
-        }
+    }
 
 }
-  
+
 
 

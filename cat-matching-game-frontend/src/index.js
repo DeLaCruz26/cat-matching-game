@@ -35,22 +35,42 @@ const api = new API
 
 const form = document.querySelector("#user-initials")
 
+
+
 form.addEventListener("submit",(event)=>{
     event.preventDefault()
     const userInitials = document.getElementById("user-initials").children[0].value
     api.postUserScore({
         user:{username:userInitials},
         score:{user_initials:userInitials,user_score:Score.currentScore}
-    }).then(Score.displayScores)
+    }).then((user_score)=> {  
+        // console.log(user_score)
+        Score.displayScores().then(()=>{
+            let userId = user_score.user.id
+            let user = document.getElementById("scoreButtonId")
+            user.addEventListener("click", () =>{
+                api.fetchUser(userId).then( data => {
+                  const body =   document.querySelector(".scoresArea")
+                    body.innerHTML = ""
+                  const ol = document.createElement("ol")
+                    ol.className = "user-list"
+                    data.scores.forEach(score =>{
+                        const p = document.createElement("p")
+                        p.className = "score-list"
+                        p.innerText = `SCORE:${score.user_score}`
+                     ol.append(p)
+                 body.appendChild(ol)
+                    // const newGame = document.createElement("BUTTON")
+                    // newGame.innerText = "New Game"
+                    // newGame.addEventListener("click",Score.newGameButton)
+                    // body.append(newGame)
+                    })
+                })
+                
+            })
+        })
+
+    }) 
 })
-
-
-
-
-
-
-
-
-
 
 

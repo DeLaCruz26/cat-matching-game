@@ -20,11 +20,11 @@ class ScoresController < ApplicationController
         end
     end 
 
-    def destroy
-        score = Score.find_by_id(params[:id])
-        score.destroy
-        render json: score
-    end
+    # def destroy
+    #     score = Score.find_by_id(params[:id])
+    #     score.destroy
+    #     render json: score
+    # end
 
 
 private 

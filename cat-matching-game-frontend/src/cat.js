@@ -40,7 +40,7 @@ class Cat{
                 this.firstSetTimeOut(previousSelectedCat)
             } 
                 
-            else if (Cat.selectedCat.imgUrl === imgUrl){
+            else if (Cat.selectedCat.imgUrl === imgUrl && Cat.selectedCat !== this){
                 Cat.numberOfCatsSelected++
                 const previousSelectedCat = Cat.selectedCat
                 Cat.selectedCat = this 
