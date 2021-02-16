@@ -7,7 +7,7 @@ class Score{
     static currentGameScorePosted = false
 
     static  displayScores = () => {
-        console.log("displayScores")
+        // console.log("displayScores")
         const main = document.querySelector(".scoresArea")
         main.innerHTML = ""
         return api.fetchUsers().then((users)=> {
@@ -16,7 +16,7 @@ class Score{
             const ol = document.createElement("ol")
             ol.className = "user-list"
             user.scores.forEach(score =>{
-                console.log(score)
+                // console.log(score)
                 const p = document.createElement("p")
                 p.className = "score-list"
                 p.innerText = `USERNAME: ${score.user_initials}- SCORE:${score.user_score}`
@@ -25,20 +25,19 @@ class Score{
                    
                  main.append(ol)
             }) 
-            const newGame = document.createElement("BUTTON")
-            newGame.innerText = "New Game"
-            newGame.addEventListener("click",this.newGameButton)
-            main.append(newGame)
-                
-            const user = document.createElement("BUTTON")
-            user.innerText = "My Score"
-            user.id = "scoreButtonId"
-            // user.addEventListener("click")
-            main.append(user) 
-        })
+                const newGame = document.createElement("BUTTON")
+                newGame.innerText = "New Game"
+                newGame.addEventListener("click",this.newGameButton)
+                main.append(newGame)
+                    
+                const user = document.createElement("BUTTON")
+                user.innerText = "My Score"
+                user.id = "scoreButtonId"
+                main.append(user) 
+            })
     }
     static newGameButton = () => {
-        console.log("New Game!")
+        //  console.log("New Game!")
         Score.currentGameScorePosted = false
         const main = document.querySelector(".scoresArea")
         main.innerHTML = ""
@@ -46,7 +45,10 @@ class Score{
         Cat.timer = 0
         beginInterval()
     }
+
+    
 }   
+
 
 
 

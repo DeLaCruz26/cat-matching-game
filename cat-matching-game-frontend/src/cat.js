@@ -5,6 +5,9 @@
         static numberOfCatsSelected = 0
         static timer = 0
         static chosenCats = 0
+       static guesses = 0
+      
+       
 
         constructor(imgUrl){
                 this.imgUrl = imgUrl;
@@ -31,13 +34,17 @@
                 if (Cat.selectedCat === null){
                     Cat.selectedCat = this 
                     Cat.numberOfCatsSelected++
+                   Cat.guesses === null 
                 }   
                     
-                else if (Cat.selectedCat.imgUrl !== imgUrl){
+                else if (Cat.selectedCat.imgUrl !== imgUrl ){
                     Cat.numberOfCatsSelected++
                     const previousSelectedCat = Cat.selectedCat
-                    Cat.selectedCat = this 
+                    Cat.selectedCat = this
+                    Cat.guesses++ 
+                    console.log(Cat.guesses)
                     this.firstSetTimeOut(previousSelectedCat)
+
                 } 
                     
                 else if (Cat.selectedCat.imgUrl === imgUrl && Cat.selectedCat !== this){
@@ -83,8 +90,8 @@
                 Cat.chosenCats += 2 
                 if (Cat.chosenCats === 12){
                     document.getElementById("user-initials").style.visibility = "visible"
-                    Score.currentScore = Cat.timer  
-                alert(` YOUR SCORE is ${Score.currentScore}!`)
+                    Score.currentScore = Cat.timer
+                alert(` YOUR SCORE:${Score.currentScore}! WRONG GUESS(ES): ${Cat.guesses}!`)
                     clearInterval(scoreInterval)
                     Cat.chosenCats = 0
                     const main = document.querySelector(".catCards")
